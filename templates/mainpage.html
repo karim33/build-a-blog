@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    {% for post in posts %}
+    <a href="/mainpage?id={{post.id}}">{{post.title}}</a>
+    <p>{{post.content}}</P>
+
+    {% endfor %}
+</ul>
+{% endblock %}
