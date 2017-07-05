@@ -43,7 +43,7 @@ def index():
             return redirect("/mainpage?id="+str(new_task.id))
 
     posts = Blog.query.all()
-    return render_template('index.html',page_name="Build A Blog!", posts=posts, title="Blog title", content="Blog content")
+    return render_template('index.html',page_name="Add a Blog Entry", posts=posts)
 
 
 @app.route('/mainpage', methods=['GET'])
@@ -51,7 +51,7 @@ def add():
     blog_id = request.args.get('id')
     if blog_id==None:
         posts = Blog.query.all()
-        return render_template('mainpage.html', posts=posts)
+        return render_template('mainpage.html', page_name="Build A Blog", posts=posts)
     else:
         singl_post= Blog.query.filter_by(id=blog_id).first()
         return render_template('singleblog.html', post=singl_post)

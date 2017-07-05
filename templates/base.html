@@ -2,11 +2,15 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <style>
+          span {
+            margin:20px;
+          }
+        </style>
     </head>
 <body>
-<a href="/mainpage">Main Page</a>
-<br>
-<a href="/">Add a Blog </a>
+<a href="/mainpage">Main Blog Page</a>
+<a href="/"><span>Add a Blog</span></a>
 
     {% block content %}
     {% endblock %}
